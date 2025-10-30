@@ -1,1 +1,23 @@
-<p>popup works!</p>,
+<div class="w-110 bg-gradient-popup rounded-2xl text-center flex flex-col justify-start py-5 px-7 text-white border-2 border-[rgba(160,44,214,0.2)] shadow-2xl relative" style="backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+
+  <header class="relative z-10">
+    <div class="flex justify-between items-center mb-6">
+      <!-- boton de casita para ir al inicio -->
+      <a class="dash-links" [routerLink]="['/inicio']" title="Inicio">
+        <img src="/assets/house.svg" alt="inicio">
+      </a>
+      <!-- boton de repo de github -->
+      <a class="dash-links" href="https://github.com/JarolRojas" target="_blank" title="GitHub">
+        <img src="/assets/github.svg" alt="GitHub">
+      </a>
+    </div>
+  </header>
+
+  <main class="relative z-10">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer class="relative z-10 border-t mt-2 border-[rgba(160,44,214,0.2)]">
+    <p class="text-sm text-white/70">By <a href="https://github.com/JarolRojas" target="_blank" class="footer-link">Jarol Rojas</a> ♥️</p>
+  </footer>
+</div>

@@ -1,1 +1,21 @@
-<p>inicio works!</p>
+<div class="py-10 gap-8 flex flex-col justify-center">
+  <div class="text-center">
+    <div class="inline-block mb-4">
+      <span class="text-4xl font-black animated-gradient-text">
+        Flaticon Pack Downloader
+      </span>
+    </div>
+    <p class="text-base mt-3 text-white/80 leading-relaxed">Get your favorite Flaticon icons. Download in SVG or PNG
+      with ease.</p>
+  </div>
+  <div class="flex justify-center gap-6">
+    <a class="sections-links" [routerLink]="['/png']">
+      <span class="relative z-10">📥 PNG</span>
+    </a>
+    <!-- boton deshabilitado -->
+
+    <a class="sections-links" [routerLink]="['/svg']" >
+      <span class="relative z-10">📥 SVG</span>
+    </a>
+  </div>
+</div>
