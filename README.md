@@ -82,11 +82,25 @@ Esto genera una versión optimizada en el directorio `dist/`.
 
 ## 🔧 Instalar la Extensión en Chrome
 
+### Opción 1: Desde el código fuente (Desarrollo)
+
 1. Abre Chrome y ve a `chrome://extensions/`
 2. Activa el **Modo de desarrollador** (esquina superior derecha)
 3. Haz clic en **Cargar extensión sin empaquetar**
 4. Selecciona la carpeta `dist/flaticon-downloader`
 5. ¡La extensión aparecerá en tu barra de herramientas!
+
+### Opción 2: Desde el ExtensionPackage (Rápido)
+
+Si prefieres no compilar el proyecto, puedes:
+
+1. Descarga el archivo `ExtensionPackage`
+2. Abre Chrome y ve a `chrome://extensions/`
+3. Activa el **Modo de desarrollador** (esquina superior derecha)
+4. Arrastra y suelta el archivo `ExtensionPackage` en la página, o:
+   - Haz clic en **Cargar extensión sin empaquetar**
+   - Selecciona la carpeta del `ExtensionPackage`
+5. ¡La extensión se instalará automáticamente!
 
 ## 📁 Estructura del Proyecto
 
