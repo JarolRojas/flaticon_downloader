@@ -13,7 +13,7 @@
     <button
       class="btn-primary min-w-[200px]"
       (click)="downloadPng()">
-      ⬇️ Descargar PNG
+      ⬇️ Download PNG
     </button>
   </div>
 
@@ -22,18 +22,18 @@
     class="card space-y-4">
     <div class="flex items-center gap-2 mb-2">
       <span class="text-xl animate-spin">⏳</span>
-      <h2 class="text-lg font-bold text-[#d698e6]">Descargando PNG...</h2>
+      <h2 class="text-lg font-bold text-[#d698e6]">Downloading PNG...</h2>
     </div>
     <div class="space-y-4">
-      <!-- Archivo Actual -->
+      <!-- Current File -->
       <div class="bg-white/5 rounded-lg p-3">
-        <div class="text-xs text-white/50 mb-1 uppercase tracking-wide">Archivo Actual</div>
+        <div class="text-xs text-white/50 mb-1 uppercase tracking-wide">Current File</div>
         <strong class="text-sm text-[#17d1c6] block truncate font-mono">{{ currentFile || '--' }}</strong>
       </div>
-      <!-- Barra de Progreso con Animación -->
+      <!-- Progress Bar -->
       <div>
         <div class="flex justify-between items-center mb-2">
-          <span class="text-xs text-white/70 font-semibold">Progreso General</span>
+          <span class="text-xs text-white/70 font-semibold">Overall Progress</span>
           <span class="text-xs font-bold text-[#d698e6]">{{ percent }}%</span>
         </div>
         <div class="progress-bar-container">
@@ -41,24 +41,24 @@
             [style.width.%]="percent"></div>
         </div>
       </div>
-      <!-- Estadísticas de Progreso -->
+      <!-- Progress Statistics -->
       <div class="grid grid-cols-2 gap-3 text-xs">
         <div class="bg-white/5 rounded-lg p-2">
-          <div class="text-white/50">Descargados</div>
+          <div class="text-white/50">Downloaded</div>
           <div class="font-bold text-[#d698e6]">{{ downloadedIcons }}/{{ totalIcons }}</div>
         </div>
         <div class="bg-white/5 rounded-lg p-2">
-          <div class="text-white/50">Compresión</div>
+          <div class="text-white/50">Compression</div>
           <div class="font-bold text-[#17d1c6]">{{ zipPercent }}%</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Selector de Nombre del ZIP -->
+  <!-- ZIP Name Selector -->
   <div [hidden]="!showNamePicker" class="card space-y-4">
-    <h2 class="text-lg font-bold text-[#d698e6] mb-4">📝 Nombre del ZIP</h2>
-    <label for="zipName" class="block text-sm font-semibold text-white/80">Personaliza el nombre del archivo:</label>
+    <h2 class="text-lg font-bold text-[#d698e6] mb-4">📝 ZIP Name</h2>
+    <label for="zipName" class="block text-sm font-semibold text-white/80">Customize the file name:</label>
     <input type="text" id="zipName" [value]="zipName" (input)="zipName = $any($event.target).value"
       placeholder=""
       class="w-full">
@@ -66,41 +66,41 @@
       <button
         class="flex-1 btn-primary"
         (click)="confirmAndDownload()">
-        ✓ Guardar ZIP
+        ✓ Save ZIP
       </button>
       <button
         class="flex-1 btn-secondary"
         (click)="cancelNamePick()">
-        ✕ Cancelar
+        ✕ Cancel
       </button>
     </div>
   </div>
 
-  <!-- Estadísticas de Descarga -->
+  <!-- Download Statistics -->
   <div [hidden]="ocultarStats" class="card space-y-4">
     <div class="flex items-center gap-2 mb-4">
       <span class="text-xl">📊</span>
-      <h1 class="text-lg font-bold text-[#d698e6]">Estadísticas de Descarga</h1>
+      <h1 class="text-lg font-bold text-[#d698e6]">Download Statistics</h1>
     </div>
     <div class="grid grid-cols-2 gap-3">
       <div class="png-stats-container">
-        <span class="text-xs text-white/60 mb-1">Total a descargar</span>
+        <span class="text-xs text-white/60 mb-1">Total to download</span>
         <span class="text-2xl font-black text-[#d698e6]">{{ totalIcons }}</span>
       </div>
       <div class="png-stats-container">
-        <span class="text-xs text-white/60 mb-1">Descargados</span>
+        <span class="text-xs text-white/60 mb-1">Downloaded</span>
         <span class="text-2xl font-black text-[#17d1c6]">{{ downloadedIcons }}</span>
       </div>
       <div class="png-stats-container">
-        <span class="text-xs text-white/60 mb-1">Errores</span>
+        <span class="text-xs text-white/60 mb-1">Errors</span>
         <span class="text-2xl font-black" [class.text-red-400]="erroredIcons > 0" [class.text-green-400]="erroredIcons === 0">{{ erroredIcons }}</span>
       </div>
       <div class="png-stats-container">
-        <span class="text-xs text-white/60 mb-1">Tiempo</span>
+        <span class="text-xs text-white/60 mb-1">Time</span>
         <span class="text-base font-bold text-[#d698e6] font-mono">{{ elapsedTime }}</span>
       </div>
       <div class="png-stats-container col-span-2">
-        <span class="text-xs text-white/60 mb-1">Tamaño Total</span>
+        <span class="text-xs text-white/60 mb-1">Total Size</span>
         <span class="text-lg font-black text-[#a02cd6]">{{ totalSize }}</span>
       </div>
     </div>
